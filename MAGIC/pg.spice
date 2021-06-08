@@ -1,0 +1,121 @@
+* SPICE3 file created from pg.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+*va1 a1 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+*va2 a2 0 pulse 0  0ns 1ns 1ns 10ns 20ns
+*va3 a3 0 pulse 1.8 1.80 0ns 1ns 1ns 10ns 20ns
+*va4 a4 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+
+*Vb1 b1 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+*Vb2 b2 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+*Vb3 b3 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+*Vb4 b4 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+
+
+va1 a1 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+va2 a2 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+va3 a3 0 pulse 1.80 1.8 0ns 1ns 1ns 10ns 20ns
+va4 a4 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+
+Vb1 b1 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb2 b2 0 pulse 1.8 1.80 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb3 b3 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb4 b4 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns $ select inv inpu
+
+
+.option scale=0.09u
+
+M1000 m1_24_26# a2 gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=300 ps=240
+M1001 m1_24_26# a2 vdd not_0/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=400 ps=240
+M1002 m1_20_n44# b1 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1003 m1_20_n44# b1 vdd not_1/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1004 gnd m1_20_n44# p1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1005 a2 b1 p1 Gnd CMOSN w=5 l=2
++  ad=100 pd=80 as=0 ps=0
+M1006 gnd b3_b g3 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1007 a3 b3 g3 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1008 gnd b2_b g2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1009 a2 b2 g2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 gnd b4_b g4 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1011 a4 b4 g4 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1012 a2 m1_20_n44# g1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1013 m1_24_26# b1 g1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 a2 b2_b p2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1015 a2_b b2 p2 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1016 a3 b3_b p3 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1017 a3_b b3 p3 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1018 a4 b4_b p4 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1019 a4_b b4 p4 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1020 b3_b b3 vdd w_240_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 a3_b a3 vdd w_192_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 b2_b b2 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1023 a2_b a2 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 b4_b b4 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1025 a4_b a4 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 b2_b b2 vdd w_143_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1027 a2_b a2 vdd w_95_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 b4_b b4 vdd w_338_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1029 a4_b a4 vdd w_290_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 b3_b b3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1031 a3_b a3 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 b4 Gnd 2.04fF
+C1 a2 Gnd 2.01fF
+C2 b2 Gnd 2.04fF
+C3 b3 Gnd 2.04fF
+C4 m1_20_n44# Gnd 2.04fF
+
+.tran 0.1n 20n
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+*plot v(a)
+plot v(p1) v(g1) 
+plot v(p2) v(g2)
+plot v(p3) v(g3)
+plot v(p4) v(g4)
+
+
+.endc
+                

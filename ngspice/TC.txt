@@ -1,0 +1,28 @@
+va1 a1 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+va2 a2 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+va3 a3 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+va4 a4 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns
+
+va1 a1 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+va2 a2 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+va3 a3 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+va4 a4 0 pulse 0 0 0ns 1ns 1ns 10ns 20ns
+ 
+Vb1 b1 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb2 b2 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb3 b3 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+Vb4 b4 0 pulse 1.8 1.8 0ns 1ns 1ns 10ns 20ns $ select inv inputs
+
+
+Vin_a1 dA1 gnd pwl (0 1.80v 50ns 1.80v 50ns 0v 100ns 0v)
+Vin_b1 dB1 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a2 dA2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b2 dB2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_a3 dA3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b3 dB3 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a4 dA4 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b4 dB4 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+

@@ -1,0 +1,101 @@
+$date
+	Thu Apr 29 11:45:42 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module add_t $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " c $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$var reg 1 % clk $end
+$scope module uut $end
+$var wire 1 % clk $end
+$var wire 4 & da [3:0] $end
+$var wire 4 ' db [3:0] $end
+$var reg 4 ( a [3:0] $end
+$var reg 4 ) b [3:0] $end
+$var reg 5 * c [4:0] $end
+$var reg 1 " c5 $end
+$var reg 4 + g [3:0] $end
+$var reg 4 , p [3:0] $end
+$var reg 4 - sum [3:0] $end
+$var reg 5 . temp [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx .
+bx -
+bx ,
+bx +
+bx0 *
+bx )
+bx (
+bx '
+bx &
+0%
+bx $
+bx #
+x"
+bx !
+$end
+#5000
+1%
+#10000
+0%
+b11 $
+b11 '
+b100 #
+b100 &
+#15000
+b111 .
+b0 *
+b0 +
+b111 ,
+b11 )
+b100 (
+1%
+#20000
+0%
+b101 $
+b101 '
+b101 #
+b101 &
+#25000
+b1010 .
+b1010 *
+b101 +
+b0 ,
+b101 )
+b101 (
+0"
+b111 !
+b111 -
+1%
+#30000
+0%
+b10 $
+b10 '
+b1000 #
+b1000 &
+#35000
+b0 *
+b0 +
+b1010 ,
+b10 )
+b1000 (
+b1010 !
+b1010 -
+1%
+#40000
+0%
+#45000
+1%
+#50000
+0%

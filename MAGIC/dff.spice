@@ -1,0 +1,90 @@
+* SPICE3 file created from dff.ext - technology: scmos
+*4 bit CLA
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+
+
+vclk clk 0 pulse 0 1.8 0ns 1ps 1ps 5ns 10ns
+Vin_d d gnd pwl (0 0v 10.05ns 0v 10.05ns 1.8v 100ns 1.8v)
+
+.option scale=0.09u
+
+M1000 m1_2_51# m1_0_n57# vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=650 ps=390
+M1001 nand_1/a_n13_n30# clk gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=150 ps=120
+M1002 m1_2_51# clk vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 m1_2_51# m1_0_n57# nand_1/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1004 m1_0_n57# m1_2_51# vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1005 nand_0/a_n13_n30# m1_0_n126# gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1006 m1_0_n57# m1_0_n126# vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 m1_0_n57# m1_2_51# nand_0/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1008 q q_b vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1009 nand_2/a_n13_n30# m1_2_51# gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1010 q m1_2_51# vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 q q_b nand_2/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1012 q_b q vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1013 nand_3/a_n13_n30# m1_103_n118# gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1014 q_b m1_103_n118# vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 q_b q nand_3/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1016 m1_0_n126# d vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1017 nand_4/a_n13_n30# m1_2_51# gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1018 m1_0_n126# m1_2_51# vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 m1_0_n126# d nand_4/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1020 m1_103_n118# m1_0_n126# vdd vdd CMOSP w=10 l=2
++  ad=150 pd=90 as=0 ps=0
+M1021 m1_103_n118# m1_2_51# vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 m1_103_n118# clk vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 nand3_0/a_n13_n30# clk nand3_0/a_n13_n54# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=50 ps=40
+M1024 m1_103_n118# m1_0_n126# nand3_0/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1025 nand3_0/a_n13_n54# m1_2_51# gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 m1_2_51# Gnd 4.41fF
+C1 m1_0_n57# Gnd 2.53fF
+C2 m1_0_n126# Gnd 3.02fF
+
+
+.tran 0.1n 40n
+
+.measure tran tclkq
++TRIG v(clk) val = 'SUPPLY/2' RISE = 2
++TARG v(q) val = 'SUPPLY/2' RISE = 1
+
+
+.control
+set hcopypscolor = 1 *Whiq_b background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+plot v(d)+2 v(clk) v(q)+4 
+.endc

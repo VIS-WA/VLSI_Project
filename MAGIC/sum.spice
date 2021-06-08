@@ -1,0 +1,302 @@
+* SPICE3 file created from sum.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_a1 c0 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b1 p1 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a2 c1 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b2 p2 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a3 c2 gnd pwl (0 1.80v 50ns 1.80v 50ns 0v 100ns 0v)
+Vin_b3 p3 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a4 c3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b4 p4 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+.option scale=0.09u
+
+M1000 s1 zs1 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=1400 ps=720
+M1001 zs1 ss1 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1002 s1 zs1 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=1300 ps=620
+M1003 zs1 ss1 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1004 s2 zs2 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1005 zs2 ss2 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1006 s2 zs2 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1007 zs2 ss2 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1008 s3 zs3 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1009 zs3 ss3 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1010 s3 zs3 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1011 zs3 ss3 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1012 s4 zs4 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1013 zs4 ss4 gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1014 s4 zs4 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1015 zs4 ss4 vdd vdd CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1016 c0_b c0 gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1017 c0_b c0 vdd vdd CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1018 p1_b p1 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1019 p1_b p1 vdd vdd CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1020 c0 p1_b ss1 Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=50 ps=40
+M1021 c0_b p1 ss1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 c1 p2_b ss2 Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=50 ps=40
+M1023 c1_b p2 ss2 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1024 c2 p3_b ss3 Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=50 ps=40
+M1025 c2_b p3 ss3 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1026 c3 p4_b ss4 Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=50 ps=40
+M1027 c3_b p4 ss4 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1028 p3_b p3 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1029 c2_b c2 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 p2_b p2 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1031 c1_b c1 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 p4_b p4 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1033 c3_b c3 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1034 p2_b p2 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 c1_b c1 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1036 p4_b p4 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1037 c3_b c3 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1038 p3_b p3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1039 c2_b c2 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 c0_b vdd 0.04fF
+C1 vdd zs1 0.34fF
+C2 s1 vdd 0.07fF
+C3 p2_b gnd 0.14fF
+C4 c0_b p1_b 0.18fF
+C5 s4 vdd 0.07fF
+C6 c1_b p2_b 0.18fF
+C7 p4_b gnd 0.14fF
+C8 p2 ss2 0.07fF
+C9 c2_b p3_b 0.18fF
+C10 p3 ss3 0.07fF
+C11 s3 zs3 0.05fF
+C12 c3_b p4_b 0.18fF
+C13 vdd c2 0.08fF
+C14 p4 ss4 0.07fF
+C15 vdd zs4 0.34fF
+C16 zs1 ss1 0.05fF
+C17 ss2 vdd 0.11fF
+C18 c0_b gnd 0.14fF
+C19 gnd zs2 0.38fF
+C20 vdd s2 0.34fF
+C21 c2_b gnd 0.14fF
+C22 ss4 vdd 0.12fF
+C23 c1 ss2 0.05fF
+C24 p2 p2_b 0.20fF
+C25 vdd vdd 0.07fF
+C26 c2 ss3 0.05fF
+C27 p3 p3_b 0.20fF
+C28 vdd p3_b 0.04fF
+C29 c3 ss4 0.05fF
+C30 p4 p4_b 0.20fF
+C31 vdd c3_b 0.04fF
+C32 vdd vdd 0.03fF
+C33 p1 ss1 0.07fF
+C34 vdd vdd 0.07fF
+C35 zs1 vdd 0.11fF
+C36 p2_b vdd 0.10fF
+C37 ss4 zs4 0.05fF
+C38 zs4 vdd 0.11fF
+C39 p4_b vdd 0.10fF
+C40 p3 gnd 0.15fF
+C41 vdd vdd 0.07fF
+C42 gnd s3 0.34fF
+C43 ss3 zs3 0.05fF
+C44 s3 vdd 0.07fF
+C45 vdd p4 0.08fF
+C46 c0 vdd 0.08fF
+C47 p1 vdd 0.08fF
+C48 vdd vdd 0.07fF
+C49 zs1 vdd 0.07fF
+C50 c0_b vdd 0.10fF
+C51 zs4 vdd 0.07fF
+C52 vdd zs2 0.34fF
+C53 c2 gnd 0.22fF
+C54 c2_b vdd 0.10fF
+C55 ss2 p2_b 0.07fF
+C56 vdd vdd 0.03fF
+C57 ss3 p3_b 0.07fF
+C58 vdd vdd 0.03fF
+C59 ss4 p4_b 0.07fF
+C60 ss4 vdd 0.11fF
+C61 vdd c3 0.08fF
+C62 gnd c0 0.03fF
+C63 ss1 vdd 0.11fF
+C64 c0_b p1 0.23fF
+C65 c0_b ss1 0.05fF
+C66 ss3 gnd 0.04fF
+C67 gnd zs3 0.38fF
+C68 vdd s3 0.34fF
+C69 ss2 zs2 0.05fF
+C70 s2 zs2 0.05fF
+C71 vdd vdd 0.03fF
+C72 zs3 vdd 0.11fF
+C73 p1_b gnd 0.14fF
+C74 vdd vdd 0.07fF
+C75 p3_b gnd 0.14fF
+C76 vdd vdd 0.03fF
+C77 ss3 vdd 0.11fF
+C78 zs3 vdd 0.07fF
+C79 vdd c1_b 0.04fF
+C80 vdd p2 0.08fF
+C81 vdd p4_b 0.04fF
+C82 vdd vdd 0.07fF
+C83 gnd s1 0.34fF
+C84 c1_b gnd 0.14fF
+C85 ss3 vdd 0.11fF
+C86 vdd zs3 0.34fF
+C87 s2 vdd 0.07fF
+C88 vdd vdd 0.03fF
+C89 c3_b gnd 0.14fF
+C90 vdd vdd 0.03fF
+C91 gnd s4 0.34fF
+C92 c0 ss1 0.05fF
+C93 p1_b vdd 0.10fF
+C94 p2 gnd 0.15fF
+C95 p3_b vdd 0.10fF
+C96 ss2 vdd 0.11fF
+C97 p4 gnd 0.15fF
+C98 vdd vdd 0.03fF
+C99 c1_b p2 0.12fF
+C100 c2_b p3 0.12fF
+C101 vdd c1 0.08fF
+C102 c3_b p4 0.12fF
+C103 gnd vdd 0.11fF
+C104 p1_b p1 0.20fF
+C105 p1_b ss1 0.07fF
+C106 gnd zs1 0.38fF
+C107 vdd s1 0.34fF
+C108 s1 zs1 0.05fF
+C109 c1_b vdd 0.10fF
+C110 c1 gnd 0.26fF
+C111 vdd vdd 0.07fF
+C112 zs2 vdd 0.11fF
+C113 c1_b c1 0.07fF
+C114 c3 gnd 0.22fF
+C115 c3_b vdd 0.10fF
+C116 vdd p2_b 0.04fF
+C117 c2_b c2 0.07fF
+C118 vdd c2_b 0.04fF
+C119 vdd p3 0.08fF
+C120 c3_b c3 0.07fF
+C121 gnd zs4 0.38fF
+C122 vdd s4 0.34fF
+C123 gnd p1 0.18fF
+C124 p1_b vdd 0.04fF
+C125 c0_b c0 0.07fF
+C126 gnd ss1 0.04fF
+C127 ss2 gnd 0.04fF
+C128 vdd vdd 0.07fF
+C129 gnd s2 0.34fF
+C130 zs2 vdd 0.07fF
+C131 c1_b ss2 0.05fF
+C132 ss4 gnd 0.04fF
+C133 c2_b ss3 0.05fF
+C134 c3_b ss4 0.05fF
+C135 s4 zs4 0.05fF
+C136 vdd Gnd 0.53fF
+C137 vdd Gnd 0.58fF
+C138 vdd Gnd 0.51fF
+C139 vdd Gnd 0.58fF
+C140 vdd Gnd 0.55fF
+C141 vdd Gnd 0.58fF
+C142 c3_b Gnd 1.08fF
+C143 p4 Gnd 0.47fF
+C144 c3 Gnd 0.23fF
+C145 ss4 Gnd 0.59fF
+C146 p4_b Gnd 1.42fF
+C147 c2_b Gnd 1.08fF
+C148 p3 Gnd 0.48fF
+C149 c2 Gnd 0.24fF
+C150 ss3 Gnd 0.59fF
+C151 p3_b Gnd 1.42fF
+C152 c1_b Gnd 1.08fF
+C153 p2 Gnd 0.48fF
+C154 c1 Gnd 0.23fF
+C155 ss2 Gnd 0.59fF
+C156 p2_b Gnd 1.42fF
+C157 c0_b Gnd 0.29fF
+C158 p1_b Gnd 1.50fF
+C159 gnd Gnd 4.15fF
+C160 vdd Gnd 0.99fF
+C161 p1 Gnd 0.79fF
+C162 vdd Gnd 0.58fF
+C163 c0 Gnd 0.43fF
+C164 vdd Gnd 0.58fF
+C165 s4 Gnd 0.09fF
+C166 zs4 Gnd 0.26fF
+C167 vdd Gnd 1.16fF
+C168 vdd Gnd 1.16fF
+C169 s3 Gnd 0.09fF
+C170 zs3 Gnd 0.26fF
+C171 vdd Gnd 1.16fF
+C172 vdd Gnd 1.16fF
+C173 s2 Gnd 0.09fF
+C174 zs2 Gnd 0.26fF
+C175 vdd Gnd 1.16fF
+C176 vdd Gnd 1.16fF
+C177 s1 Gnd 0.09fF
+C178 zs1 Gnd 0.26fF
+C179 ss1 Gnd 0.61fF
+C180 vdd Gnd 1.16fF
+C181 vdd Gnd 1.16fF
+
+.tran 0.1n 20n
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+*plot v(a)
+plot  v(s1)
+plot  v(s2)
+plot  v(s3) 
+plot  v(s4)
+.endc
+

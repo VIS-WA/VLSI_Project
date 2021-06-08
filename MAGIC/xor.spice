@@ -1,0 +1,8 @@
+* SPICE3 file created from xor.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 a_13_22# a_11_3# y Gnd nfet w=5 l=2
++  ad=25 pd=20 as=50 ps=40
+M1001 a_13_n25# a_11_n28# y Gnd nfet w=5 l=2
++  ad=25 pd=20 as=0 ps=0

@@ -1,0 +1,36 @@
+ SPICE3 file created from nand.ext - technology: scmos
+*4 bit CLA
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+
+va1 a1 0 pulse 0 1.8 0ns 1ns 1ns 10ns 10ns
+va2 b1 0 pulse 0 1.8 0ns 1ns 1ns 10ns 20ns
+
+.option scale=0.09u
+
+M1000 y a1 vdd vdd CMOSP w=10 l=2
++  ad=100 pd=60 as=100 ps=60
+M1001 x b1 gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=25 ps=20
+M1002 y b1 vdd vdd CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 y a1 x Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+
+.tran 0.1n 80n
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+plot v(y) v(a1)+2 v(b1)+4
+.endc

@@ -1,0 +1,59 @@
+* SPICE3 file created from buff.ext - technology: scmos
+Prop and Generate
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+va1 in 0 pulse 0 1.8 0ns 1ns 1ns 10ns 20ns
+
+
+.option scale=0.09u
+
+M1000 out a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=300 ps=140
+M1001 a_13_n40# in gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1002 out a_13_n40# vdd w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=300 ps=140
+M1003 a_13_n40# in vdd w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+C0 a_13_n40# vdd 0.34fF
+C1 a_13_n40# out 0.05fF
+C2 in gnd 0.04fF
+C3 a_13_n40# gnd 0.38fF
+C4 vdd out 0.34fF
+C5 out gnd 0.34fF
+C6 w_0_0# in 0.11fF
+C7 w_0_0# a_13_n40# 0.07fF
+C8 w_0_0# vdd 0.07fF
+C9 w_30_0# a_13_n40# 0.11fF
+C10 in a_13_n40# 0.05fF
+C11 w_30_0# vdd 0.07fF
+C12 w_30_0# out 0.07fF
+C13 gnd Gnd 0.23fF
+C14 out Gnd 0.08fF
+C15 vdd Gnd 0.09fF
+C16 a_13_n40# Gnd 0.26fF
+C17 in Gnd 0.15fF
+C18 w_30_0# Gnd 1.01fF
+C19 w_0_0# Gnd 1.16fF
+
+.tran 0.1n 50n
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+*plot v(a)
+plot v(out) v(in)
+
+*hardcopy fig_inv_trans.eps v(b) v(c)
+.endc
+

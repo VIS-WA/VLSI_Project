@@ -1,0 +1,106 @@
+magic
+tech scmos
+timestamp 1619465570
+<< metal1 >>
+rect 67 86 175 89
+rect 81 63 168 64
+rect 80 60 168 63
+rect 6 56 7 57
+rect 80 31 85 60
+rect 234 52 239 57
+rect 68 0 87 3
+rect 68 -3 175 0
+rect 60 -16 73 -11
+rect 68 -47 73 -16
+rect 234 -57 239 -52
+rect 0 -117 4 -60
+rect 103 -92 210 -89
+rect 103 -118 115 -113
+rect 149 -118 166 -113
+rect 149 -123 154 -118
+rect 108 -128 154 -123
+rect 166 -145 171 -125
+rect 68 -178 175 -175
+rect 68 -201 71 -178
+<< m2contact >>
+rect 2 60 7 65
+rect 2 51 7 56
+rect 68 47 73 52
+rect 234 47 239 52
+rect 80 26 85 31
+rect 55 -16 60 -11
+rect 68 -52 73 -47
+rect 0 -57 5 -52
+rect 166 -56 171 -51
+rect 166 -118 171 -113
+rect 0 -126 5 -121
+rect 103 -128 108 -123
+rect 234 -131 239 -126
+rect 0 -150 5 -145
+rect 166 -150 171 -145
+<< metal2 >>
+rect 7 60 124 65
+rect 2 7 7 51
+rect 2 4 61 7
+rect 55 -11 61 4
+rect 68 -21 73 47
+rect 0 -25 73 -21
+rect 0 -52 5 -25
+rect 80 -47 85 26
+rect 73 -52 108 -47
+rect 0 -132 5 -126
+rect 103 -123 108 -52
+rect 120 -86 124 60
+rect 234 8 239 47
+rect 166 5 239 8
+rect 166 -51 170 5
+rect 120 -91 239 -86
+rect 156 -132 161 -91
+rect 234 -126 239 -91
+rect 0 -135 161 -132
+rect 5 -150 166 -145
+<< m123contact >>
+rect 71 81 76 86
+rect 103 -8 108 -3
+rect 71 -89 76 -84
+rect 166 52 171 57
+rect 234 -52 239 -47
+rect 166 -65 171 -60
+rect 115 -118 120 -113
+rect 103 -175 108 -170
+<< metal3 >>
+rect 71 52 76 81
+rect 68 47 76 52
+rect 71 -84 76 47
+rect 103 -170 108 -8
+rect 166 -20 171 52
+rect 166 -23 239 -20
+rect 234 -47 239 -23
+rect 115 -65 166 -60
+rect 171 -65 172 -60
+rect 115 -113 120 -65
+use nand  nand_0
+timestamp 1619187957
+transform 1 0 46 0 1 63
+box -46 -63 22 26
+use nand  nand_1
+timestamp 1619187957
+transform 1 0 46 0 -1 -63
+box -46 -63 22 26
+use nand  nand_2
+timestamp 1619187957
+transform 1 0 212 0 1 63
+box -46 -63 22 26
+use nand  nand_3
+timestamp 1619187957
+transform 1 0 212 0 -1 -63
+box -46 -63 22 26
+use nand3  nand3_0
+timestamp 1619378128
+transform 1 0 46 0 1 -115
+box -46 -86 57 26
+use nand  nand_4
+timestamp 1619187957
+transform 1 0 212 0 1 -115
+box -46 -63 22 26
+<< end >>

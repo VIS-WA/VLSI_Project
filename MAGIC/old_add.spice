@@ -1,0 +1,352 @@
+4 bit CLA
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={5*LAMBDA}
+.param width_P={10*LAMBDA}
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+
+va0 a1 gnd pulse 1.8 0 0ns 1ps 1ps 2n 4n
+vb0 b1 gnd pulse 0 1.8 0ns 1ps 1ps 2n 4n
+
+va1 a2 gnd pulse 0 1.8 0ns 1ps 1ps 2n 4n
+vb1 b2 gnd pulse 0 1.8 0ns 1ps 1ps 2n 4n
+
+va2 a3 gnd pulse 1.8 0 0ns 1ps 1ps 2n 4n
+vb2 b3 gnd pulse 1.8 0 0ns 1ps 1ps 2n 4n
+
+va3 a4 gnd pulse 0 1.8 0ns 1ps 1ps 2n 4n
+vb3 b4 gnd pulse 0 1.8 0ns 1ps 1ps 2n 4n
+
+*vclk clk gnd pulse 1.8 0 1ps 1ps 1ps 5n 10n
+vclk clk 0 pulse 0 1.8 0ns 0ns 0ns 5ns 10ns
+
+.option scale=0.09u
+
+M1000 dff_4/m1_2_51# dff_4/m1_0_n57# dff_4/m1_67_86# dff_4/nand_1/w_n2_n3# CMOSP w=10 l=2
++  ad=100 pd=60 as=650 ps=390
+M1001 dff_4/nand_1/a_n13_n30# dff_4/m1_0_n117# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=150 ps=120
+M1002 dff_4/m1_2_51# dff_4/m1_0_n117# dff_4/m1_67_86# dff_4/nand_1/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 dff_4/m1_2_51# dff_4/m1_0_n57# dff_4/nand_1/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1004 dff_4/m1_0_n57# dff_4/m1_2_51# dff_4/m1_67_86# dff_4/nand_0/w_n2_n3# CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1005 dff_4/nand_0/a_n13_n30# dff_4/m1_0_n126# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1006 dff_4/m1_0_n57# dff_4/m1_0_n126# dff_4/m1_67_86# dff_4/nand_0/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 dff_4/m1_0_n57# dff_4/m1_2_51# dff_4/nand_0/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1008 dff_4/m1_166_n56# dff_4/m1_166_52# dff_4/m1_67_86# dff_4/nand_2/w_n2_n3# CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1009 dff_4/nand_2/a_n13_n30# dff_4/m1_2_51# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1010 dff_4/m1_166_n56# dff_4/m1_2_51# dff_4/m1_67_86# dff_4/nand_2/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 dff_4/m1_166_n56# dff_4/m1_166_52# dff_4/nand_2/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1012 dff_4/m1_166_52# dff_4/m1_166_n56# dff_4/m1_67_86# dff_4/nand_3/w_n2_n3# CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1013 dff_4/nand_3/a_n13_n30# dff_4/m1_103_n118# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1014 dff_4/m1_166_52# dff_4/m1_103_n118# dff_4/m1_67_86# dff_4/nand_3/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 dff_4/m1_166_52# dff_4/m1_166_n56# dff_4/nand_3/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1016 dff_4/m1_0_n126# dff_4/m1_0_n150# dff_4/m1_67_86# dff_4/nand_3/w_n2_n3# CMOSP w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1017 dff_4/nand_4/a_n13_n30# dff_4/m1_2_51# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1018 dff_4/m1_0_n126# dff_4/m1_2_51# dff_4/m1_67_86# dff_4/nand_3/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 dff_4/m1_0_n126# dff_4/m1_0_n150# dff_4/nand_4/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1020 dff_4/m1_103_n118# dff_4/m1_0_n126# dff_4/m1_67_86# dff_4/nand_1/w_n2_n3# CMOSP w=10 l=2
++  ad=150 pd=90 as=0 ps=0
+M1021 dff_4/m1_103_n118# dff_4/m1_2_51# dff_4/m1_67_86# dff_4/nand3_0/w_33_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 dff_4/m1_103_n118# dff_4/m1_0_n117# dff_4/m1_67_86# dff_4/nand_1/w_n37_n3# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 dff_4/nand3_0/a_n13_n30# dff_4/m1_0_n117# dff_4/nand3_0/a_n13_n54# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=50 ps=40
+M1024 dff_4/m1_103_n118# dff_4/m1_0_n126# dff_4/nand3_0/a_n13_n30# Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1025 dff_4/nand3_0/a_n13_n54# dff_4/m1_2_51# dff_4/m1_68_n201# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 m1_500_n330# buff_0/a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=2425 ps=1440
+M1027 buff_0/a_13_n40# m1_446_n330# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1028 m1_500_n330# buff_0/a_13_n40# vdd buff_0/w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=2650 ps=1390
+M1029 buff_0/a_13_n40# m1_446_n330# vdd buff_0/w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1030 pg_0/m1_24_26# a1 gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1031 pg_0/m1_24_26# a1 vdd pg_0/not_0/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1032 pg_0/m1_20_n44# b1 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1033 pg_0/m1_20_n44# b1 vdd pg_0/not_1/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1034 gnd pg_0/m1_20_n44# cla_0/g1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1035 a1 b1 cla_0/g1 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1036 gnd pg_0/a_253_15# cla_0/g3 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1037 a3 b3 cla_0/g3 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1038 gnd pg_0/a_156_15# cla_0/g2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1039 a2 b2 cla_0/g2 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1040 gnd pg_0/a_351_15# m1_332_211# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1041 a4 b4 m1_332_211# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1042 a1 pg_0/m1_20_n44# sum_0/p1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1043 pg_0/m1_24_26# b1 sum_0/p1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1044 a2 pg_0/a_156_15# sum_0/p2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1045 pg_0/a_108_15# b2 sum_0/p2 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1046 a3 pg_0/a_253_15# sum_0/p3 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1047 pg_0/a_205_15# b3 sum_0/p3 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1048 a4 pg_0/a_351_15# sum_0/p4 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1049 pg_0/a_303_15# b4 sum_0/p4 Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1050 pg_0/a_253_15# b3 vdd pg_0/w_240_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1051 pg_0/a_205_15# a3 vdd pg_0/w_192_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1052 pg_0/a_156_15# b2 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1053 pg_0/a_108_15# a2 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1054 pg_0/a_351_15# b4 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1055 pg_0/a_303_15# a4 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1056 pg_0/a_156_15# b2 vdd pg_0/w_143_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1057 pg_0/a_108_15# a2 vdd pg_0/w_95_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1058 pg_0/a_351_15# b4 vdd pg_0/w_338_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1059 pg_0/a_303_15# a4 vdd pg_0/w_290_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1060 pg_0/a_253_15# b3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1061 pg_0/a_205_15# a3 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 m1_332_211# cla_0/m1_511_n74# cla_0/z54 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1063 vdd cla_0/m1_681_26# cla_0/z54 Gnd CMOSN w=5 l=2
++  ad=175 pd=140 as=0 ps=0
+M1064 cla_0/m1_322_n67# cla_0/z41_b sum_0/c3 Gnd CMOSN w=5 l=2
++  ad=75 pd=60 as=75 ps=60
+M1065 vdd cla_0/z41 sum_0/c3 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1066 cla_0/z54 cla_0/m1_475_31# cla_0/z55 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1067 vdd cla_0/m1_586_26# cla_0/z55 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1068 cla_0/z55 cla_0/z51_b m1_446_n330# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1069 vdd cla_0/m1_475_n30# m1_446_n330# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1070 cla_0/m1_14_n27# cla_0/g1 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1071 cla_0/m1_14_n27# cla_0/g1 vdd cla_0/not_0/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1072 cla_0/g2_b cla_0/g2 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1073 cla_0/g2_b cla_0/g2 vdd cla_0/not_1/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1074 cla_0/p3_b sum_0/p3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1075 cla_0/p3_b sum_0/p3 vdd cla_0/not_2/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1076 cla_0/z41_b cla_0/z41 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1077 cla_0/z41_b cla_0/z41 vdd cla_0/not_4/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1078 cla_0/g3_b cla_0/g3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1079 cla_0/g3_b cla_0/g3 vdd cla_0/not_3/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1080 cla_0/p4_b sum_0/p4 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1081 cla_0/p4_b sum_0/p4 vdd cla_0/not_5/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1082 cla_0/m1_586_26# cla_0/m1_475_31# gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1083 cla_0/m1_586_26# cla_0/m1_475_31# vdd cla_0/not_6/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1084 gnd cla_0/m1_14_n27# sum_0/c1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1085 vdd cla_0/g1 sum_0/c1 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1086 cla_0/z51_b cla_0/m1_475_n30# gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1087 cla_0/z51_b cla_0/m1_475_n30# vdd cla_0/not_7/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1088 gnd cla_0/g2 cla_0/z42 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1089 sum_0/p3 cla_0/g2_b cla_0/z42 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1090 cla_0/m1_681_26# cla_0/m1_511_n74# gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1091 cla_0/m1_681_26# cla_0/m1_511_n74# vdd cla_0/not_8/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1092 gnd cla_0/m1_14_n27# cla_0/m1_85_n24# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=100 ps=80
+M1093 sum_0/p2 cla_0/g1 cla_0/m1_85_n24# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1094 gnd cla_0/p3_b cla_0/z41 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=100 ps=80
+M1095 cla_0/m1_85_n24# sum_0/p3 cla_0/z41 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 gnd cla_0/p4_b cla_0/m1_475_31# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1097 cla_0/z42 sum_0/p4 cla_0/m1_475_31# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1098 gnd cla_0/p4_b cla_0/m1_475_n30# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1099 cla_0/z41 sum_0/p4 cla_0/m1_475_n30# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 gnd cla_0/p4_b cla_0/m1_511_n74# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1101 cla_0/g3 sum_0/p4 cla_0/m1_511_n74# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1102 cla_0/m1_85_n24# cla_0/g2_b sum_0/c2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=75 ps=60
+M1103 vdd cla_0/g2 sum_0/c2 Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1104 cla_0/z41 cla_0/g3_b cla_0/m1_322_n67# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1105 vdd cla_0/g3 cla_0/m1_322_n67# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1106 ds1 sum_0/buff_0/a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1107 sum_0/buff_0/a_13_n40# sum_0/m1_29_n132# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1108 ds1 sum_0/buff_0/a_13_n40# vdd sum_0/buff_0/w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1109 sum_0/buff_0/a_13_n40# sum_0/m1_29_n132# vdd sum_0/buff_0/w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1110 ds2 sum_0/buff_1/a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1111 sum_0/buff_1/a_13_n40# sum_0/m1_127_n68# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1112 ds2 sum_0/buff_1/a_13_n40# vdd sum_0/buff_1/w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1113 sum_0/buff_1/a_13_n40# sum_0/m1_127_n68# vdd sum_0/buff_1/w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1114 ds3 sum_0/buff_2/a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1115 sum_0/buff_2/a_13_n40# sum_0/m1_224_n68# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1116 ds3 sum_0/buff_2/a_13_n40# vdd sum_0/buff_2/w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1117 sum_0/buff_2/a_13_n40# sum_0/m1_224_n68# vdd sum_0/buff_2/w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1118 ds4 sum_0/buff_3/a_13_n40# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1119 sum_0/buff_3/a_13_n40# sum_0/m1_322_n69# gnd Gnd CMOSN w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1120 ds4 sum_0/buff_3/a_13_n40# vdd sum_0/buff_3/w_30_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1121 sum_0/buff_3/a_13_n40# sum_0/m1_322_n69# vdd sum_0/buff_3/w_0_0# CMOSP w=30 l=2
++  ad=150 pd=70 as=0 ps=0
+M1122 sum_0/m1_24_26# gnd gnd Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1123 sum_0/m1_24_26# gnd vdd sum_0/not_0/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1124 sum_0/m1_20_n44# sum_0/p1 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1125 sum_0/m1_20_n44# sum_0/p1 vdd sum_0/not_1/w_0_3# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1126 gnd sum_0/m1_20_n44# sum_0/m1_29_n132# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1127 sum_0/m1_24_26# sum_0/p1 sum_0/m1_29_n132# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1128 sum_0/c1 sum_0/p2_b sum_0/m1_127_n68# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1129 sum_0/c1_b sum_0/p2 sum_0/m1_127_n68# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1130 sum_0/c2 sum_0/p3_b sum_0/m1_224_n68# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1131 sum_0/c2_b sum_0/p3 sum_0/m1_224_n68# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1132 sum_0/c3 sum_0/p4_b sum_0/m1_322_n69# Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=50 ps=40
+M1133 sum_0/c3_b sum_0/p4 sum_0/m1_322_n69# Gnd CMOSN w=5 l=2
++  ad=50 pd=40 as=0 ps=0
+M1134 sum_0/p3_b sum_0/p3 vdd sum_0/w_240_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1135 sum_0/c2_b sum_0/c2 vdd sum_0/w_192_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1136 sum_0/p2_b sum_0/p2 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1137 sum_0/c1_b sum_0/c1 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1138 sum_0/p4_b sum_0/p4 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1139 sum_0/c3_b sum_0/c3 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1140 sum_0/p2_b sum_0/p2 vdd sum_0/w_143_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1141 sum_0/c1_b sum_0/c1 vdd sum_0/w_95_50# CMOSP w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1142 sum_0/p4_b sum_0/p4 vdd sum_0/w_338_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1143 sum_0/c3_b sum_0/c3 vdd sum_0/w_290_50# CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1144 sum_0/p3_b sum_0/p3 gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1145 sum_0/c2_b sum_0/c2 gnd Gnd CMOSN w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 m2_n421_n621# Gnd 14.47fF 
+C1 sum_0/p4 Gnd 3.33fF
+C2 sum_0/p3 Gnd 2.47fF
+C3 sum_0/p2 Gnd 3.73fF
+C4 gnd Gnd 10.81fF
+C5 pg_0/a_351_15# Gnd 3.19fF
+C6 a4 Gnd 2.30fF
+C7 pg_0/a_156_15# Gnd 3.16fF
+C8 cla_0/g2 Gnd 2.73fF
+C9 b2 Gnd 5.00fF
+C10 pg_0/a_253_15# Gnd 3.16fF
+C11 pg_0/m1_20_n44# Gnd 2.04fF
+C12 b1 Gnd 3.74fF
+C13 vdd Gnd 12.07fF
+C14 dff_4/m1_2_51# Gnd 4.41fF
+C15 dff_4/m1_0_n57# Gnd 2.53fF
+C16 dff_4/m1_0_n126# Gnd 3.03fF
+
+.tran 0.1n 10n
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7)
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7)
+
+
+run
+plot v(a1) v(b1)+2 v(ds1)+4 
+plot v(a2) v(b2)+2 v(ds2) +4 
+plot v(a3) v(b3)+2 v(ds3) +4 
+plot v(a4) v(b4)+2 v(ds4) +4 
+plot v(clk) v(c4)+2
+.endc
